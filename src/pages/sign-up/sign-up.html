@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Vetstem - Sign up</title>
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-
+  awesome/4.7.0/css/font-awesome.min.css"> -->
+  <link rel="stylesheet" href="sign-up.css">
+</head>
+<body>
+
+  <h1>Sign up</h1>
+
+  <div id="app">
+    <form @submit.prevent="onSubmit">
+      <!-- Name -->
+      <!-- <label for="fname">First Name</label>
+      <input type="text" name="fname" v-model="fname" placeholder="First Name"
+            required>
+      <label for="lname">Last Name</label>
+      <input type="text" name="lname" v-model="lname" placeholder="Surname"
+            required><br /> -->
+
+      <h3>SIGN UP WITH...</h3>
+
+      <div id="upperButtons">
+        <button class="signUpButtons" id="signUpFb"><strong>Facebook</strong></button>
+        <!-- <br /><br /> -->
+        <button class="signUpButtons" id="signUpTwitter"><strong>Twitter</strong></button>
+        <br /><br />
+        <button class="signUpButtons" id="signUpLinkedIn"><strong>LinkedIn</strong></button>
+        <br /><br />
+        <button class="signUpButtons" id="signUpGoogle"><strong>Google</strong></button>
+        <br /><br />
+      </div>
+      <br />
+      <div style="text-align: center;" class="vl">
+        <span class="vl-innertext">OR</span>
+      </div>
+      <br /><br />
+
+      <!-- Gender -->
+      <!-- <label for="male">Male</label>
+      <input type="radio" id="male" name="gender"
+              value ="male" v-model="gender" required>
+      <label for="female">Female</label>
+      <input type="radio" id="female"  name="gender"
+              value ="female" v-model="gender"><br /> -->
+
+      <!-- Mobile Number -->
+      <!-- <label for="cellNum">Mobile Number</label>
+      <input type="number" name="cellNum" v-model="cellNum" required>
+      <br /><br /> -->
+
+      <!-- Email Address -->
+      <label class="inputLabel" id="email" for="email">Email Address</label><br />
+      <input type="text" name="email" ref="email" v-model="email"
+              placeholder="name@company.com" required><br /><br />
+      <p class="errorAlert" v-if="!(/^\S+@\S+\.\S+$/.test(this.email)) && errors.emailErr.length">
+        {{ errors.emailErr }}</p><br />
+
+      <!-- Username -->
+      <label class="inputLabel" for="username">Username</label><br />
+      <input type="text" name="username" ref="username" v-model="username"
+              placeholder="Username" required><br /><br />
+      <p class="errorAlert" v-if="!(/^[a-zA-Z0-9]+$/.test(this.username)) && errors.usernameErr.length">
+        {{ errors.usernameErr }}</p><br />
+
+      <!-- Password -->
+      <label class="inputLabel" for="password">Password</label>
+      <div class="passwordContainer">
+        <input :type="inputType" name="password" ref="password"
+              v-model="password" placeholder="Use number and letter" required>
+        <i class="material-icons" @click="showPassword()">{{ visible }}</i>
+      </div><br />
+      <p class="errorAlert" v-if="this.password.length < 6 && errors.passErr.length">
+          {{ errors.passErr }}</p><br />
+
+      <!-- Confirm Password -->
+      <label class="inputLabel" for="confirmPass">Confirm Password</label>
+      <div class="passwordContainer">
+        <input :type="inputType" name="confirmPass" ref="confirmPass"
+                v-model="confirmPass" placeholder="Verify password" required>
+        <i class="material-icons" @click="showPassword()">{{ visible }}</i>
+      </div><br />
+      <p class="errorAlert" v-if="this.password != this.confirmPass && 
+                errors.confirmPassErr.length">{{ errors.confirmPassErr }}</p>
+      <br /><br />
+
+      <!-- Submit Button -->
+      <input id="submitButton" type="submit" value="Create Account">
+      <br />
+      <br />
+
+      <p style="display: inline;">Already have an account? </p>
+      <a href="../sign-in/sign-in.html">Sign in</a>
+
+    </form><br /><br />
+
+  </div>
+
+  <!-- <script async src="../vue.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script async src="sign-up.js"></script>
+</body>
+</html>

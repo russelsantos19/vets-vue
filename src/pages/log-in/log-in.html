@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Vetstem - Sign in</title>
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-
+  awesome/4.7.0/css/font-awesome.min.css"> -->
+  <link rel="stylesheet" href="log-in.css">
+</head>
+<body>
+
+  <h1>Sign in</h1>
+
+  <div id="app">
+    <div class="container">
+      <form @submit.prevent="onSubmit">
+
+        <!-- Username -->
+        <label class="inputLabel" for="username">Username</label><br />
+        <input type="text" name="username" ref="username" v-model="username"
+                placeholder="Username" required><br /><br />
+        <p class="errorAlert" v-if="!(/^[a-zA-Z0-9]+$/.test(this.username)) && errors.usernameErr.length">
+          {{ errors.usernameErr }}</p><br />
+
+        <!-- Password -->
+        <label class="inputLabel" for="password">Password</label>
+        <div class="passwordContainer">
+          <input :type="inputType" name="password" ref="password"
+                v-model="password" placeholder="Password" required>
+          <i class="material-icons" @click="showPassword()">{{ visible }}</i>
+        </div><br />
+        <p class="errorAlert" v-if="this.password.length < 6 && errors.passErr.length">
+            {{ errors.passErr }}</p><br />
+
+        <a href="#" class="btn">Forgot password?</a><br /><br /><br />
+        
+
+        <!-- Submit Button -->
+        <input id="submitButton" type="submit" value="Log in">
+        <br />
+        <br />
+
+      </form><br /><br />
+
+      <div style="text-align: center;" class="vl">
+        <span class="vl-innertext">OR</span>
+      </div>
+      <br /><br />
+
+      <!-- Social Sign In -->
+      <!-- <h3>Log in with...</h3> -->
+
+      <div id="upperButtons">
+        <button class="signInButtons" id="signInFb"><strong>Continue with Facebook</strong></button>
+        <br />
+        <button class="signInButtons" id="signInTwitter"><strong>Continue with Twitter</strong></button>
+        <br />
+        <button class="signInButtons" id="signInLinkedIn"><strong>Continue with LinkedIn</strong></button>
+        <br />
+        <button class="signInButtons" id="signInGoogle"><strong>Continue with Google</strong></button>
+        <br />
+      </div>
+
+      <!-- <p style="display: inline;">Need an account? </p>
+      <a href="../sign-up/sign-up.html">Sign up</a> -->
+    </div>  
+  </div>
+
+  <!-- <script async src="../vue.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script async src="log-in.js"></script>
+</body>
+</html>

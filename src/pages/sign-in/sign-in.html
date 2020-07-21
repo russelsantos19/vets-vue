@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vetstem - Sign in</title>
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+  <link rel="stylesheet"
+  href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="sign-in.css">
+</head>
+
+<body>
+<div id="app" class="container">
+  <form action="/action_page.php">
+    <div class="row">
+      <h2 style="text-align:center">Sign in</h2>
+      <div class="vl">
+        <span class="vl-innertext">or</span>
+      </div>
+
+      
+
+      <div class="col">
+        <h3>LOG IN WITH...</h3>
+        <div id="loginSocialButtons">
+        <button class="signInButtons" id="signInFb"><strong>Facebook</strong></button>
+        <button class="signInButtons" id="signInTwitter"><strong>Twitter</strong></button>
+        <button class="signInButtons" id="signInLinkedIn"><strong>LinkedIn</strong></button>
+        <button class="signInButtons" id="signInGoogle"><strong>Gmail</strong></button>
+
+        <div>
+          <a id="#signUp" href="../sign-up/sign-up.html" style="color:white" class="btn">Sign up</a>
+        </div>
+      </div>
+      </div>
+
+      <!-- <div class="col">
+        <a href="#" class="fb btn">
+          <i class="fa fa-facebook fa-fw"></i>Facebook
+        </a>
+        <a href="#" class="twitter btn">
+          <i class="fa fa-twitter fa-fw"></i>Twitter
+        </a>
+        <a href="#" class="google btn"><i class="fa fa-google fa-fw">
+          </i>Google+
+        </a>
+      </div> -->
+
+      <div class="col">
+        <div class="hide-md-lg">
+          <p>Or sign in manually:</p>
+        </div>
+
+        <input type="text" name="username" placeholder="Username" class="inputContainer"
+              required>
+        <div class="passwordContainer">
+          <input :type="inputType" name="password" ref="password"
+                v-model="password" placeholder="Password" required>
+          <i class="material-icons" @click="showPassword()">{{ visible }}</i>
+        </div>
+        <!-- <a id="forgotPassword" href="#">Forgot Password?</a><br /><br /> -->
+
+        <input type="submit" class="inputContainer" value="Login">
+      </div>
+      
+    </div>
+  </form>
+</div>
+
+<div class="bottom-container">
+  <div class="row">
+    <div class="col">
+      <a id="#signUp" href="../sign-up/sign-up.html" style="color:white" class="btn">Sign up</a>
+    </div>
+    <div class="col">
+      <a href="#" style="color:white" class="btn">Forgot password?</a>
+    </div>
+  </div>
+</div>
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+<script src="../../vue.js"></script>
+<script async src="sign-in.js"></script>
+</body>
+</html>

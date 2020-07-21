@@ -1,0 +1,222 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  /* border: 1px solid black; */
+}
+
+/* style the container */
+.container {
+  position: relative;
+  border-radius: 5px;
+  /* background-color: #f2f2f2; */
+  border: 1px solid #f2f2f2;
+  padding: 20px 0 30px 0;
+} 
+
+/* style inputs and link buttons */
+input,
+.btn {
+  width: 100%;
+  padding: 12px;
+  padding-left: 22px;
+  border: none;
+  border-radius: 4px;
+  margin: 5px 0;
+  opacity: 0.85;
+  display: inline-block;
+  font-size: 17px;
+  line-height: 20px;
+  text-decoration: none; /* remove underline from anchors */
+}
+
+.passwordContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.passwordContainer i {
+  position: absolute;
+  right: 0;
+  margin: 0 35px 0 0;
+  cursor: default;
+  color: #555;
+}
+
+input:hover,
+.btn:hover {
+  opacity: 1;
+}
+
+/* add appropriate colors to fb, twitter and google buttons */
+
+#loginSocialButtons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.signInButtons {
+  /* color: white; */
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 10px;
+  width: 100px;
+  text-align: center;
+  margin: 10px;
+  opacity: 0.75;
+}
+
+.signInButtons:hover {
+  /* background-color: #f2f2f2; */
+  opacity: 1;
+}
+
+#signInFb {
+  background: url('../../assets/fbIcon.png');
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: 25px;
+  padding-left: 25px;
+}
+
+#signInTwitter {
+  /* background-color: #38A1F3; */
+  background: url('../../assets/twitterIcon.png');
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: 25px;
+  padding-left: 25px;
+}
+
+#signInLinkedIn {
+  /* background-color: #0e76a8; */
+  background: url('../../assets/linkedInIcon.png');
+  background-repeat: no-repeat;
+  background-position: 2px;
+  background-size: 20px;
+  padding-left: 20px;
+}
+
+#signInGoogle {
+  /* background-color: #D44638; */
+  background: url('../../assets/gmailIcon.png');
+  background-repeat: no-repeat;
+  background-position: 2px;
+  background-size: 20px;
+  padding-left: 20px;
+}
+
+/* .fb {
+  background-color: #3B5998;
+  color: white;
+}
+
+.twitter {
+  background-color: #55ACEE;
+  color: white;
+}
+
+.google {
+  background-color: #dd4b39;
+  color: white;
+} */
+
+/* style the submit button */
+input[type=submit] {
+  border-radius: 10px;
+  background-color: white;
+  color: rgb(36, 91, 179);
+  cursor: pointer;
+  border: 1.5px solid rgb(36, 91, 179);
+}
+/* #4CAF50 */
+
+input[type=submit]:hover {
+  background-color: #f2f2f2;
+  /* background-color: #b9beb9; */
+  /* #45a049; */
+}
+
+
+input[type=text],
+input[type=password] {
+  background-color: #f2f2f2;
+}
+
+#forgotPassword {
+  font-size: 15px;
+}
+
+/* Two-column layout */
+.col {
+  float: left;
+  width: 50%;
+  margin: auto;
+  padding: 0 50px;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* vertical line */
+.vl {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  border: 2px solid #ddd;
+  height: 175px;
+}
+
+/* text inside the vertical line */
+.vl-innertext {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f1f1f1;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  padding: 8px 10px;
+}
+
+/* hide some text on medium and large screens */
+.hide-md-lg {
+  display: none;
+}
+
+/* bottom container */
+.bottom-container {
+  text-align: center;
+  background-color: rgb(36, 91, 179);
+  border-radius: 10px;
+}
+
+/* Responsive layout - when the screen is less than 650px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 650px) {
+  .col {
+    width: 100%;
+    margin-top: 0;
+  }
+  /* hide the vertical line */
+  .vl {
+    display: none;
+  }
+  /* show the hidden text on small screens */
+  .hide-md-lg {
+    display: block;
+    text-align: center;
+  }
+
+  .passwordContainer i {
+    margin: 0 10px 0 0;
+  }
+}
